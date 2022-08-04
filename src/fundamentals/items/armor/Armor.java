@@ -1,14 +1,16 @@
 package fundamentals.items.armor;
 
 import fundamentals.items.Slot;
+import fundamentals.rpg_Characters.Attributes;
 
 public class Armor {
     private ArmorType armorType;
     private String name;
     private Slot slot;
     private int requiredLevel;
+    private Attributes attributes;
 
-    public Armor(ArmorType armortype, String name, Slot slot, int RequiredLevel) throws Exception{
+    public Armor(ArmorType armortype, String name, Slot slot, int RequiredLevel, Attributes attributes) throws Exception{
         this.armorType = armortype;
         this.name = name;
         this.slot = slot;
@@ -17,6 +19,7 @@ public class Armor {
             throw new Exception("An armor cannot be a weapon.");
         }
         this.requiredLevel = requiredLevel;
+        this.attributes = attributes;
     }
 
    //getters and setters
@@ -26,4 +29,7 @@ public class Armor {
     public int getRequiredLevel() { return requiredLevel; }
     public void setRequiredLevel(int level) { this.requiredLevel = level; }
 
+    public Attributes getAttributes() {
+        return attributes;
+    }
 }

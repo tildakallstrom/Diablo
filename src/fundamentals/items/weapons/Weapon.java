@@ -11,7 +11,7 @@ public class Weapon {
     //where to put the weapon
     private Slot slot = Slot.Weapon;
     private int damage;
-    private int attacksPerSecond;
+    private float attacksPerSecond;
 
 
 
@@ -33,8 +33,8 @@ public class Weapon {
     public int getDamage() { return damage; }
     public void setDamage(int damage) { this.damage = damage; }
 
-    public int getAttacksPerSecond() { return attacksPerSecond; }
-    public void setAttacksPerSecond(int attacksPerSecond) { this.attacksPerSecond = attacksPerSecond; }
+    public float getAttacksPerSecond() { return attacksPerSecond; }
+    public void setAttacksPerSecond(float attacksPerSecond) { this.attacksPerSecond = attacksPerSecond; }
 
 
 }

@@ -1,8 +1,14 @@
 package fundamentals.rpg_Characters;
 
 
+import fundamentals.items.Slot;
+import fundamentals.items.armor.Armor;
 import fundamentals.items.armor.ArmorType;
+import fundamentals.items.weapons.Weapon;
 import fundamentals.items.weapons.WeaponType;
+import fundamentals.rpg_Characters.Attributes;
+
+import java.util.HashMap;
 
 public abstract class Hero {
     private String name;
@@ -13,12 +19,16 @@ public abstract class Hero {
 
     private ArmorType[] armors;
 
+    private HashMap<Slot, Armor> equippedArmors = new HashMap<>();
+    private Weapon weapon;
+
     public Hero(String name, int level, Attributes basePrimaryAttributes, WeaponType[] weapons, ArmorType[] armors) {
         this.name = name;
         this.level = level;
         this.basePrimaryAttributes = basePrimaryAttributes;
         this.weapons = weapons;
         this.armors = armors;
+
     }
 
     public String getName() {
@@ -45,12 +55,23 @@ public abstract class Hero {
         this.basePrimaryAttributes = attributes;
     }
 
-    public Attributes getTotalPrimaryAttributes() {
-        return basePrimaryAttributes;
-    }
 
-    public void setTotalPrimaryAttributes() {
-        this.basePrimaryAttributes = basePrimaryAttributes;
+    //get attributes from hero + from armors
+    public Attributes totalAttributes() {
+        int strength = 0;
+        int dexterity = 0;
+        int intelligence = 0;
+        for(Slot slot : equippedArmors.keySet()) {
+            Armor armor = equippedArmors.get(slot);
+            strength += armor.getAttributes().getStrength();
+            dexterity += armor.getAttributes().getDexterity();
+            intelligence += armor.getAttributes().getIntelligence();
+        }
+        return new Attributes(
+                strength + getBasePrimaryAttributes().getStrength(),
+                dexterity + getBasePrimaryAttributes().getDexterity(),
+                intelligence + getBasePrimaryAttributes().getIntelligence()
+        );
     }
 
 
