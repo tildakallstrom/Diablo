@@ -19,4 +19,12 @@ public class Ranger extends Hero{
                 getBasePrimaryAttributes().getDexterity() + 7,
                 getBasePrimaryAttributes().getIntelligence() + 1));
     }
+
+    public float characterDPS() {
+        if(weapon == null) {
+            return (1 + totalAttributes().getDexterity() / 100f);
+        } else {
+            return weapon.getDPS() * (1 + totalAttributes().getDexterity() / 100f );
+        }
+    }
 }

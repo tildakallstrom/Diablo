@@ -36,5 +36,7 @@ public class Weapon {
     public float getAttacksPerSecond() { return attacksPerSecond; }
     public void setAttacksPerSecond(float attacksPerSecond) { this.attacksPerSecond = attacksPerSecond; }
 
+    public float getDPS() { return damage * attacksPerSecond; }
+
 
 }

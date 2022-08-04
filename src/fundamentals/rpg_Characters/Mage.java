@@ -1,6 +1,7 @@
 package fundamentals.rpg_Characters;
 
 import fundamentals.items.armor.ArmorType;
+import fundamentals.items.weapons.Weapon;
 import fundamentals.items.weapons.WeaponType;
 
 public class Mage extends Hero {
@@ -23,5 +24,13 @@ public class Mage extends Hero {
                 getBasePrimaryAttributes().getStrength() + 1,
                 getBasePrimaryAttributes().getDexterity() + 1,
                 getBasePrimaryAttributes().getIntelligence() + 5));
+    }
+
+    public float characterDPS() {
+        if(weapon == null) {
+            return (1 + totalAttributes().getIntelligence() / 100f);
+        } else {
+            return weapon.getDPS() * (1 + totalAttributes().getIntelligence() / 100f );
+        }
     }
 }

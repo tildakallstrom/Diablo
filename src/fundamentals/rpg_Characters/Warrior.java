@@ -22,4 +22,12 @@ public class Warrior extends Hero{
                 getBasePrimaryAttributes().getIntelligence() + 1));
     }
 
+    public float characterDPS() {
+        if(weapon == null) {
+            return (1 + totalAttributes().getStrength() / 100f);
+        } else {
+            return weapon.getDPS() * (1 + totalAttributes().getStrength() / 100f );
+        }
+    }
+
 }

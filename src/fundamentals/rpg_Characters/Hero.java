@@ -20,7 +20,7 @@ public abstract class Hero {
     private ArmorType[] armors;
 
     private HashMap<Slot, Armor> equippedArmors = new HashMap<>();
-    private Weapon weapon;
+    protected Weapon weapon;
 
     public Hero(String name, int level, Attributes basePrimaryAttributes, WeaponType[] weapons, ArmorType[] armors) {
         this.name = name;

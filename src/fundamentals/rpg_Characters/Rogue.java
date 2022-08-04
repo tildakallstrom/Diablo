@@ -20,4 +20,12 @@ public class Rogue extends Hero{
                 getBasePrimaryAttributes().getDexterity() + 4,
                 getBasePrimaryAttributes().getIntelligence() + 1));
     }
+
+    public float characterDPS() {
+        if(weapon == null) {
+            return (1 + totalAttributes().getDexterity() / 100f);
+        } else {
+            return weapon.getDPS() * (1 + totalAttributes().getDexterity() / 100f );
+        }
+    }
 }
