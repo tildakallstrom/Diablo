@@ -1,15 +1,16 @@
 package fundamentals.rpg_Characters;
 
+import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.WeaponType;
 
 public class Rogue extends Hero{
 
-    public Rogue(String name, int level, Attributes totalPrimaryAttributes) {
+    public Rogue(String name, int level) {
         super(name,
                 level,
                 new Attributes(2, 6, 1),
-                totalPrimaryAttributes,
-                new WeaponType[]{WeaponType.Dagger, WeaponType.Sword});
+                new WeaponType[]{WeaponType.Dagger, WeaponType.Sword},
+                new ArmorType[]{ArmorType.Leather, ArmorType.Mail});
     }
 
     @Override

@@ -1,6 +1,7 @@
 package fundamentals.items.weapons;
-
+import fundamentals.items.Slot;
 public class Weapon {
+
     private WeaponType weaponType;
     private String name;
 
@@ -8,16 +9,15 @@ public class Weapon {
     //required level for character to have this weapon
     private int requiredLevel;
     //where to put the weapon
-    private String slot;
-
+    private Slot slot = Slot.Weapon;
     private int damage;
     private int attacksPerSecond;
 
 
-    public Weapon(String name, int requiredLevel, String slot, WeaponType weaponType, int damage, int attacksPerSecond) {
+
+    public Weapon(String name, int requiredLevel, WeaponType weaponType, int damage, int attacksPerSecond) {
         this.name = name;
         this.requiredLevel = requiredLevel;
-        this.slot = slot;
         this.weaponType = weaponType;
         this.damage = damage;
         this.attacksPerSecond = attacksPerSecond;
@@ -29,9 +29,6 @@ public class Weapon {
 
     public int getRequiredLevel() { return requiredLevel; }
     public void setRequiredLevel(int level) { this.requiredLevel = level; }
-
-    public String getSlot() { return slot; }
-    public void setSlot(String slot) { this.slot = slot; }
 
     public int getDamage() { return damage; }
     public void setDamage(int damage) { this.damage = damage; }

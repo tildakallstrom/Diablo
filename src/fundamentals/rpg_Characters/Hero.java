@@ -1,22 +1,24 @@
 package fundamentals.rpg_Characters;
 
 
+import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.WeaponType;
 
 public abstract class Hero {
     private String name;
     private int level;
     private Attributes basePrimaryAttributes;
-    private Attributes totalPrimaryAttributes;
 
     private WeaponType[] weapons;
 
-    public Hero(String name, int level, Attributes basePrimaryAttributes, Attributes totalPrimaryAttributes, WeaponType[] weapons) {
+    private ArmorType[] armors;
+
+    public Hero(String name, int level, Attributes basePrimaryAttributes, WeaponType[] weapons, ArmorType[] armors) {
         this.name = name;
         this.level = level;
         this.basePrimaryAttributes = basePrimaryAttributes;
-        this.totalPrimaryAttributes = totalPrimaryAttributes;
         this.weapons = weapons;
+        this.armors = armors;
     }
 
     public String getName() {
@@ -44,11 +46,11 @@ public abstract class Hero {
     }
 
     public Attributes getTotalPrimaryAttributes() {
-        return totalPrimaryAttributes;
+        return basePrimaryAttributes;
     }
 
     public void setTotalPrimaryAttributes() {
-        this.totalPrimaryAttributes = totalPrimaryAttributes;
+        this.basePrimaryAttributes = basePrimaryAttributes;
     }
 
 

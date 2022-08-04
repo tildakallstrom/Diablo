@@ -1,14 +1,15 @@
 package fundamentals.rpg_Characters;
 
+import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.WeaponType;
 
 public class Ranger extends Hero{
-    public Ranger(String name, int level, Attributes totalPrimaryAttributes) {
+    public Ranger(String name, int level) {
         super(name,
                 level,
                 new Attributes(1, 7, 1),
-                totalPrimaryAttributes,
-                new WeaponType[]{WeaponType.Bow});
+                new WeaponType[]{WeaponType.Bow},
+                new ArmorType[]{ArmorType.Leather, ArmorType.Mail});
     }
 
     @Override
