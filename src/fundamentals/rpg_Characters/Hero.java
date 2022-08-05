@@ -6,7 +6,6 @@ import fundamentals.items.armor.Armor;
 import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.Weapon;
 import fundamentals.items.weapons.WeaponType;
-import fundamentals.rpg_Characters.Attributes;
 
 import java.util.HashMap;
 
@@ -20,6 +19,7 @@ public abstract class Hero {
     private ArmorType[] armors;
 
     private HashMap<Slot, Armor> equippedArmors = new HashMap<>();
+    private HashMap<Slot, Weapon> equippedWeapon = new HashMap<>();
     protected Weapon weapon;
 
     public Hero(String name, Attributes basePrimaryAttributes, WeaponType[] weapons, ArmorType[] armors) {
@@ -78,6 +78,11 @@ public abstract class Hero {
     public void levelUp() {
         // level up character
         level++;
+    }
+
+    public void equip(Weapon weapon) {
+        equippedWeapon.put(Slot.Weapon, weapon);
+        this.weapon = weapon;
     }
 
 }

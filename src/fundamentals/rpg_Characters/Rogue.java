@@ -1,6 +1,8 @@
 package fundamentals.rpg_Characters;
 
+import fundamentals.items.Slot;
 import fundamentals.items.armor.ArmorType;
+import fundamentals.items.weapons.Weapon;
 import fundamentals.items.weapons.WeaponType;
 
 public class Rogue extends Hero{
@@ -29,4 +31,5 @@ public class Rogue extends Hero{
             return weapon.getDPS() * (1 + totalAttributes().getDexterity() / 100f );
         }
     }
+
 }

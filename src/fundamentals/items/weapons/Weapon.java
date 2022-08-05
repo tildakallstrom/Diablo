@@ -9,7 +9,7 @@ public class Weapon {
     //required level for character to have this weapon
     private int requiredLevel;
     //where to put the weapon
-    private Slot slot = Slot.Weapon;
+    public Slot slot = Slot.Weapon;
     private int damage;
     private float attacksPerSecond;
 
