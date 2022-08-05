@@ -7,9 +7,21 @@ import fundamentals.rpg_Characters.Rogue;
 
 public class Main {
     public static void main(String[] args) {
-        //Hero hero = new Rogue("hej");
+        Hero hero = new Rogue("hej" );
+hero.levelUp();
+        String heroDisplay = String.format("Character name: %s, Level: %s, Strength: %s, Dexterity: %s, Intelligence: %s, DPS: %s",
+                hero.getName(),
+                hero.getLevel(),
+                hero.getBasePrimaryAttributes().getStrength(),
+                hero.getBasePrimaryAttributes().getDexterity(),
+                hero.getBasePrimaryAttributes().getIntelligence(),
+                hero.characterDPS());
+
+        System.out.println(heroDisplay);
     }
 
     //String heroDisplay = String.Format("Character name: %s, Level: %s", hero.getName(), hero.getLevel());
+
+
 
 }

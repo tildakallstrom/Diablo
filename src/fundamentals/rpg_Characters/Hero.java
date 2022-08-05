@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 public abstract class Hero {
     private String name;
-    private int level;
+    private int level = 1;
     private Attributes basePrimaryAttributes;
 
     private WeaponType[] weapons;
@@ -22,9 +22,8 @@ public abstract class Hero {
     private HashMap<Slot, Armor> equippedArmors = new HashMap<>();
     protected Weapon weapon;
 
-    public Hero(String name, int level, Attributes basePrimaryAttributes, WeaponType[] weapons, ArmorType[] armors) {
+    public Hero(String name, Attributes basePrimaryAttributes, WeaponType[] weapons, ArmorType[] armors) {
         this.name = name;
-        this.level = level;
         this.basePrimaryAttributes = basePrimaryAttributes;
         this.weapons = weapons;
         this.armors = armors;
@@ -74,8 +73,12 @@ public abstract class Hero {
         );
     }
 
+    public float characterDPS() { return 0; }
 
-    public void levelUp() {}
+    public void levelUp() {
+        // level up character
+        level++;
+    }
 
 }
 

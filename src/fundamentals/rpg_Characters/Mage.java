@@ -7,9 +7,8 @@ import fundamentals.items.weapons.WeaponType;
 public class Mage extends Hero {
 
 
-    public Mage(String name, int level) {
+    public Mage(String name) {
         super(name,
-                level,
                 new Attributes(1, 1, 8),
                 new WeaponType[]{WeaponType.Staff, WeaponType.Wand},
                 new ArmorType[]{ArmorType.Cloth});
@@ -18,6 +17,7 @@ public class Mage extends Hero {
     @Override
     //level up the character
     public void levelUp() {
+        super.levelUp();
         //set new attributes
         setBasePrimaryAttributes(new Attributes(
                 //base strength + 1 for every level
@@ -26,6 +26,7 @@ public class Mage extends Hero {
                 getBasePrimaryAttributes().getIntelligence() + 5));
     }
 
+    @Override
     public float characterDPS() {
         if(weapon == null) {
             return (1 + totalAttributes().getIntelligence() / 100f);
