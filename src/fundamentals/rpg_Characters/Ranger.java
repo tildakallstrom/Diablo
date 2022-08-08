@@ -16,7 +16,7 @@ public class Ranger extends Hero{
         super.levelUp();
         setBasePrimaryAttributes(new Attributes(
                 getBasePrimaryAttributes().getStrength() + 1,
-                getBasePrimaryAttributes().getDexterity() + 7,
+                getBasePrimaryAttributes().getDexterity() + 5,
                 getBasePrimaryAttributes().getIntelligence() + 1));
     }
 

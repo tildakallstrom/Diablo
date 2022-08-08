@@ -14,7 +14,7 @@ public class Main {
         Hero hero = new Rogue("hej" );
 
         hero.equip(axe);
-System.out.println(axe.getDPS());
+        System.out.println(axe.getDPS());
        // hero.levelUp();
 
 

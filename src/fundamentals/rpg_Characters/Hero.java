@@ -6,7 +6,9 @@ import fundamentals.items.armor.Armor;
 import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.Weapon;
 import fundamentals.items.weapons.WeaponType;
+import fundamentals.rpg_Characters.exceptions.InvalidWeaponException;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public abstract class Hero {
@@ -81,8 +83,15 @@ public abstract class Hero {
     }
 
     public void equip(Weapon weapon) {
+        if (!Arrays.asList(weapons).contains(weapon.getWeaponType())) {
+            throw new InvalidWeaponException("This character cannot equip this weapon.");
+        }
         equippedWeapon.put(Slot.Weapon, weapon);
         this.weapon = weapon;
+    }
+
+    public void equipArmor(Armor armor) {
+        equippedArmors.put(armor.getSlot(), armor);
     }
 
 }

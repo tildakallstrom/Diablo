@@ -1,5 +1,8 @@
 package fundamentals.items.weapons;
 import fundamentals.items.Slot;
+import fundamentals.items.armor.ArmorType;
+import fundamentals.rpg_Characters.exceptions.InvalidWeaponException;
+
 public class Weapon {
 
     private WeaponType weaponType;
@@ -15,11 +18,17 @@ public class Weapon {
 
 
 
-    public Weapon(String name, int requiredLevel, WeaponType weaponType, int damage, int attacksPerSecond) {
+    public Weapon(String name, int requiredLevel, WeaponType weapontype, int damage, int attacksPerSecond) {
         this.name = name;
         this.requiredLevel = requiredLevel;
-        this.weaponType = weaponType;
+        this.weaponType = weapontype;
+        if (damage < 0) {
+            throw new InvalidWeaponException("A weapon must have damage");
+        }
         this.damage = damage;
+        if (attacksPerSecond < 0) {
+            throw new InvalidWeaponException("A weapon must have at least 1 attack per second.");
+        }
         this.attacksPerSecond = attacksPerSecond;
     }
 
@@ -38,5 +47,6 @@ public class Weapon {
 
     public float getDPS() { return damage * attacksPerSecond; }
 
+    public WeaponType getWeaponType() { return weaponType; }
 
 }
