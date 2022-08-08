@@ -6,6 +6,7 @@ import fundamentals.items.armor.Armor;
 import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.Weapon;
 import fundamentals.items.weapons.WeaponType;
+import fundamentals.rpg_Characters.exceptions.InvalidArmorException;
 import fundamentals.rpg_Characters.exceptions.InvalidWeaponException;
 
 import java.util.Arrays;
@@ -86,11 +87,20 @@ public abstract class Hero {
         if (!Arrays.asList(weapons).contains(weapon.getWeaponType())) {
             throw new InvalidWeaponException("This character cannot equip this weapon.");
         }
+        if(weapon.getRequiredLevel() > level) {
+            throw new InvalidWeaponException("Your character have to be of the right level to equip this weapon.");
+        }
         equippedWeapon.put(Slot.Weapon, weapon);
         this.weapon = weapon;
     }
 
     public void equipArmor(Armor armor) {
+        if (!Arrays.asList(armors).contains(armor.getArmorType())) {
+            throw new InvalidArmorException("This character cannot equip this armor.");
+        }
+        if(armor.getRequiredLevel() > level) {
+            throw new InvalidArmorException("Your character have to be of the right level to equip this armor.");
+        }
         equippedArmors.put(armor.getSlot(), armor);
     }
 
