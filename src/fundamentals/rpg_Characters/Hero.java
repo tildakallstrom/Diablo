@@ -83,17 +83,22 @@ public abstract class Hero {
         level++;
     }
 
+    //equip weapons
     public void equip(Weapon weapon) {
+        //if it is the wrong weapontype
         if (!Arrays.asList(weapons).contains(weapon.getWeaponType())) {
             throw new InvalidWeaponException("This character cannot equip this weapon.");
         }
+        //if character doesnt have the required level
         if(weapon.getRequiredLevel() > level) {
             throw new InvalidWeaponException("Your character have to be of the right level to equip this weapon.");
         }
+        //put weapon in weapon slot
         equippedWeapon.put(Slot.Weapon, weapon);
         this.weapon = weapon;
     }
 
+    //equip armor
     public void equipArmor(Armor armor) {
         if (!Arrays.asList(armors).contains(armor.getArmorType())) {
             throw new InvalidArmorException("This character cannot equip this armor.");

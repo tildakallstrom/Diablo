@@ -2,6 +2,9 @@
 
 This projects contains a console app created with Java which contains characters from the game Diablo - Mages, Rangers, Rogues and Warriors. It also includes Items - Armors and Weapons of different types which can be equipped in different slots and equipped by different characters of different levels.
 
+## Creator
+This project was created by Tilda Källström @tildakallstrom and was completed August 2022.
+
 ## Background
 
 This is a console application for the first assignment of the Java course at Noroff.
@@ -18,12 +21,14 @@ in a test-driven development manner.
 ## Use this project
 
 - Install JDK 17
+- The project should run in IntelliJ or Eclipse
 - Clone repository
 - Build project
 - Run the application
-- Use the folder "test" to run the tests
+- Use the folder "test" to run the tests for the code
+
 
 ## Testing
-The test-folder contains testing for the functionality in the code. It includes tests that show that the levelUp function works correctly etc.
+The test-folder contains testing for the functionality in the code. It includes tests that show that the levelUp function works correctly, that the characterDPS is correct etc.
 
 

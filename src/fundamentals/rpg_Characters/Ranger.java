@@ -12,6 +12,7 @@ public class Ranger extends Hero{
     }
 
     @Override
+    //level up character and set new attributes
     public void levelUp() {
         super.levelUp();
         setBasePrimaryAttributes(new Attributes(
@@ -21,7 +22,9 @@ public class Ranger extends Hero{
     }
 
     @Override
+    //count characterDPS depending on wich weapon the character has
     public float characterDPS() {
+        //if character has no weapon
         if(weapon == null) {
             return (1 + totalAttributes().getDexterity() / 100f);
         } else {
