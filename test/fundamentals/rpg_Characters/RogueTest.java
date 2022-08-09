@@ -83,7 +83,7 @@ class RogueTest {
         //test if weapon gets equipped
     void testEquipWeapon() {
         Weapon weapon = new Weapon("Dagger", 1, Dagger, 2, 2);
-        Hero hero = new Rogue("Dean" );
+        Hero hero = new Rogue("Dean");
         hero.equip(weapon);
 
         assertEquals(hero.getEquippedWeapon().get(Slot.Weapon), weapon);

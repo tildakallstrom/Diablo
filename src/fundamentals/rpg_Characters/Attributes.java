@@ -5,7 +5,7 @@ public class Attributes {
     private int dexterity;
     private int intelligence;
 
-    public Attributes(int strength, int dexterity, int intelligence){
+    public Attributes(int strength, int dexterity, int intelligence) {
         this.strength = strength;
         this.dexterity = dexterity;
         this.intelligence = intelligence;

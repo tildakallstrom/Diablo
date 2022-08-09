@@ -63,7 +63,7 @@ public abstract class Hero {
         int strength = 0;
         int dexterity = 0;
         int intelligence = 0;
-        for(Slot slot : equippedArmors.keySet()) {
+        for (Slot slot : equippedArmors.keySet()) {
             Armor armor = equippedArmors.get(slot);
             strength += armor.getAttributes().getStrength();
             dexterity += armor.getAttributes().getDexterity();
@@ -76,7 +76,9 @@ public abstract class Hero {
         );
     }
 
-    public float characterDPS() { return 0; }
+    public float characterDPS() {
+        return 0;
+    }
 
     public void levelUp() {
         // level up character
@@ -90,7 +92,7 @@ public abstract class Hero {
             throw new InvalidWeaponException("This character cannot equip this weapon.");
         }
         //if character doesnt have the required level
-        if(weapon.getRequiredLevel() > level) {
+        if (weapon.getRequiredLevel() > level) {
             throw new InvalidWeaponException("Your character have to be of the right level to equip this weapon.");
         }
         //put weapon in weapon slot
@@ -103,7 +105,7 @@ public abstract class Hero {
         if (!Arrays.asList(armors).contains(armor.getArmorType())) {
             throw new InvalidArmorException("This character cannot equip this armor.");
         }
-        if(armor.getRequiredLevel() > level) {
+        if (armor.getRequiredLevel() > level) {
             throw new InvalidArmorException("Your character have to be of the right level to equip this armor.");
         }
         equippedArmors.put(armor.getSlot(), armor);
@@ -112,6 +114,7 @@ public abstract class Hero {
     public HashMap<Slot, Armor> getEquippedArmors() {
         return equippedArmors;
     }
+
     public HashMap<Slot, Weapon> getEquippedWeapon() {
         return equippedWeapon;
     }

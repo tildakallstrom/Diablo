@@ -25,7 +25,7 @@ class WarriorTest {
         //test if character dps increases with equipped weapon
     void testCharacterDPS() {
         Weapon axe = new Weapon("Axe", 1, Axe, 2, 2);
-        Hero hero = new Warrior("Warren" );
+        Hero hero = new Warrior("Warren");
 
         hero.equip(axe);
 
@@ -33,13 +33,14 @@ class WarriorTest {
 
         assertEquals(hero.characterDPS(), expected);
     }
+
     @Test
         //check if hero gets higher attributes with higher level
     void testAttributes() {
         Hero hero = new Warrior("Warren");
         hero.levelUp();
 
-        Attributes expected = new Attributes (8, 4, 2);
+        Attributes expected = new Attributes(8, 4, 2);
         assertEquals(expected.getStrength(), hero.totalAttributes().getStrength());
         assertEquals(expected.getDexterity(), hero.totalAttributes().getDexterity());
         assertEquals(expected.getIntelligence(), hero.totalAttributes().getIntelligence());
@@ -53,7 +54,7 @@ class WarriorTest {
         Armor armor = new Armor(ArmorType.Plate, "Armor", Slot.Body, 1, new Attributes(1, 1, 1));
         hero.equipArmor(armor);
 
-        Attributes expected = new Attributes (6, 3, 2);
+        Attributes expected = new Attributes(6, 3, 2);
         assertEquals(expected.getStrength(), hero.totalAttributes().getStrength());
         assertEquals(expected.getDexterity(), hero.totalAttributes().getDexterity());
         assertEquals(expected.getIntelligence(), hero.totalAttributes().getIntelligence());
@@ -83,7 +84,7 @@ class WarriorTest {
         //test if weapon gets equipped
     void testEquipWeapon() {
         Weapon weapon = new Weapon("Axe", 1, Axe, 2, 2);
-        Hero hero = new Warrior("Warren" );
+        Hero hero = new Warrior("Warren");
         hero.equip(weapon);
 
         assertEquals(hero.getEquippedWeapon().get(Slot.Weapon), weapon);

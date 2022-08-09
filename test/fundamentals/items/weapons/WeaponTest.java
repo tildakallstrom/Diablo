@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class WeaponTest {
 
     @Test
-    //test if name is added
+        //test if name is added
     void testSetName() {
         String expectedName = "Axe 1";
         Weapon testSetName = new Weapon(expectedName, 1, WeaponType.Axe, 1, 1);
@@ -21,7 +21,7 @@ class WeaponTest {
     }
 
     @Test
-    //test if weapontype is added
+        //test if weapontype is added
     void testSetWeaponType() {
         WeaponType expectedWeaponType = WeaponType.Axe;
         Weapon testSetWeaponType = new Weapon("Axe 1", 1, expectedWeaponType, 1, 1);
@@ -30,7 +30,7 @@ class WeaponTest {
     }
 
     @Test
-    //test if required level is added to new weapon
+        //test if required level is added to new weapon
     void testRequiredLevel() {
         int expectedRequiredLevel = 1;
         Weapon testSetRequiredLevel = new Weapon("Axe 2", expectedRequiredLevel, WeaponType.Axe, 1, 1);
@@ -66,7 +66,7 @@ class WeaponTest {
     }
 
     @Test
-    //test if hero can equip weapon
+        //test if hero can equip weapon
     void testEquip() {
         Weapon AxeWeapon = new Weapon("Axe 2", 1, WeaponType.Axe, 1, 1);
         Hero hero = new Warrior("Warren");
@@ -75,7 +75,7 @@ class WeaponTest {
     }
 
     @Test
-    //test that weapons cannot have negative damage
+        //test that weapons cannot have negative damage
     void negativeDamage() {
         assertThrows(InvalidWeaponException.class, () -> new Weapon("Axe 2", 1, WeaponType.Axe, -10, 1));
     }

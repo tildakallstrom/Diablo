@@ -5,7 +5,7 @@ import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.Weapon;
 import fundamentals.items.weapons.WeaponType;
 
-public class Rogue extends Hero{
+public class Rogue extends Hero {
 
     public Rogue(String name) {
         super(name,
@@ -25,10 +25,10 @@ public class Rogue extends Hero{
 
     @Override
     public float characterDPS() {
-        if(weapon == null) {
+        if (weapon == null) {
             return (1 + totalAttributes().getDexterity() / 100f);
         } else {
-            return weapon.getDPS() * (1 + totalAttributes().getDexterity() / 100f );
+            return weapon.getDPS() * (1 + totalAttributes().getDexterity() / 100f);
         }
     }
 

@@ -3,7 +3,7 @@ package fundamentals.rpg_Characters;
 import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.WeaponType;
 
-public class Warrior extends Hero{
+public class Warrior extends Hero {
 
     public Warrior(String name) {
         super(name,
@@ -24,10 +24,10 @@ public class Warrior extends Hero{
 
     @Override
     public float characterDPS() {
-        if(weapon == null) {
+        if (weapon == null) {
             return (1 + totalAttributes().getStrength() / 100f);
         } else {
-            return weapon.getDPS() * (1 + totalAttributes().getStrength() / 100f );
+            return weapon.getDPS() * (1 + totalAttributes().getStrength() / 100f);
         }
     }
 

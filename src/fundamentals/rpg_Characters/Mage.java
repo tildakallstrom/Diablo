@@ -28,10 +28,10 @@ public class Mage extends Hero {
 
     @Override
     public float characterDPS() {
-        if(weapon == null) {
+        if (weapon == null) {
             return (1 + totalAttributes().getIntelligence() / 100f);
         } else {
-            return weapon.getDPS() * (1 + totalAttributes().getIntelligence() / 100f );
+            return weapon.getDPS() * (1 + totalAttributes().getIntelligence() / 100f);
         }
     }
 }

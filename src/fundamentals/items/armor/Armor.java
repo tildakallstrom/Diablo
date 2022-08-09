@@ -17,21 +17,33 @@ public class Armor {
         this.name = name;
         this.slot = slot;
         //if armor is put in weapon, throw exception
-        if(this.slot == Slot.Weapon) {
+        if (this.slot == Slot.Weapon) {
             throw new InvalidArmorException("An armor cannot be a weapon.");
         }
         this.requiredLevel = requiredLevel;
         this.attributes = attributes;
     }
 
-   //getters and setters
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    //getters and setters
+    public String getName() {
+        return name;
+    }
 
-    public int getRequiredLevel() { return requiredLevel; }
-    public void setRequiredLevel(int level) { this.requiredLevel = level; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public ArmorType getArmorType() { return armorType; }
+    public int getRequiredLevel() {
+        return requiredLevel;
+    }
+
+    public void setRequiredLevel(int level) {
+        this.requiredLevel = level;
+    }
+
+    public ArmorType getArmorType() {
+        return armorType;
+    }
 
     public Attributes getAttributes() {
         return attributes;

@@ -11,11 +11,10 @@ import static fundamentals.items.weapons.WeaponType.Dagger;
 public class Main {
     public static void main(String[] args) {
         Weapon axe = new Weapon("axe", 1, Dagger, 2, 2);
-        Hero hero = new Rogue("hej" );
+        Hero hero = new Rogue("hej");
 
         hero.equip(axe);
         System.out.println(axe.getDPS());
-       // hero.levelUp();
 
 
         String heroDisplay = String.format("Character name: %s, Level: %s, Strength: %s, Dexterity: %s, Intelligence: %s, DPS: %s",
@@ -28,9 +27,6 @@ public class Main {
 
         System.out.println(heroDisplay);
     }
-
-    //String heroDisplay = String.Format("Character name: %s, Level: %s", hero.getName(), hero.getLevel());
-
 
 
 }
