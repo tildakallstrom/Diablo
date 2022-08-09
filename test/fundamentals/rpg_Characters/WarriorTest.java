@@ -3,8 +3,11 @@ package fundamentals.rpg_Characters;
 import fundamentals.items.Slot;
 import fundamentals.items.armor.Armor;
 import fundamentals.items.armor.ArmorType;
+import fundamentals.items.weapons.Weapon;
 import org.junit.jupiter.api.Test;
 
+import static fundamentals.items.weapons.WeaponType.Axe;
+import static fundamentals.items.weapons.WeaponType.Dagger;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WarriorTest {
@@ -18,6 +21,18 @@ class WarriorTest {
         assertEquals(expected, hero.getLevel());
     }
 
+    @Test
+        //test if character dps increases with equipped weapon
+    void testCharacterDPS() {
+        Weapon axe = new Weapon("Axe", 1, Axe, 2, 2);
+        Hero hero = new Warrior("Warren" );
+
+        hero.equip(axe);
+
+        float expected = 4.2f;
+
+        assertEquals(hero.characterDPS(), expected);
+    }
     @Test
         //check if hero gets higher attributes with higher level
     void testAttributes() {
@@ -52,5 +67,25 @@ class WarriorTest {
 
         float expected = 1.08f;
         assertEquals(expected, hero.characterDPS());
+    }
+
+    @Test
+        //test if armor gets equipped
+    void testEquipArmor() {
+        Hero hero = new Warrior("Warren");
+        Armor armor = new Armor(ArmorType.Mail, "Armor", Slot.Body, 1, new Attributes(1, 1, 1));
+        hero.equipArmor(armor);
+
+        assertEquals(hero.getEquippedArmors().get(Slot.Body), armor);
+    }
+
+    @Test
+        //test if weapon gets equipped
+    void testEquipWeapon() {
+        Weapon weapon = new Weapon("Axe", 1, Axe, 2, 2);
+        Hero hero = new Warrior("Warren" );
+        hero.equip(weapon);
+
+        assertEquals(hero.getEquippedWeapon().get(Slot.Weapon), weapon);
     }
 }

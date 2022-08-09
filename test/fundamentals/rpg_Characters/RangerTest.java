@@ -6,8 +6,7 @@ import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.Weapon;
 import org.junit.jupiter.api.Test;
 
-import static fundamentals.items.weapons.WeaponType.Bow;
-import static fundamentals.items.weapons.WeaponType.Dagger;
+import static fundamentals.items.weapons.WeaponType.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RangerTest {
@@ -56,5 +55,37 @@ class RangerTest {
 
         float expected = 1.12f;
         assertEquals(expected, hero.characterDPS());
+    }
+
+    @Test
+        //test if character dps increases with equipped weapon
+    void testCharacterDPS() {
+        Weapon bow = new Weapon("Bow", 1, Bow, 2, 2);
+        Hero hero = new Ranger("Dean" );
+
+        hero.equip(bow);
+
+        float expected = 4.28f;
+
+        assertEquals(hero.characterDPS(), expected);
+    }
+    @Test
+        //test if armor gets equipped
+    void testEquipArmor() {
+        Hero hero = new Ranger("Sean");
+        Armor armor = new Armor(ArmorType.Leather, "Armor", Slot.Body, 1, new Attributes(1, 1, 1));
+        hero.equipArmor(armor);
+
+        assertEquals(hero.getEquippedArmors().get(Slot.Body), armor);
+    }
+
+    @Test
+        //test if weapon gets equipped
+    void testEquipWeapon() {
+        Weapon weapon = new Weapon("Bow", 1, Bow, 2, 2);
+        Hero hero = new Ranger("Dean" );
+        hero.equip(weapon);
+
+        assertEquals(hero.getEquippedWeapon().get(Slot.Weapon), weapon);
     }
 }

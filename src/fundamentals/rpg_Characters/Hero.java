@@ -109,6 +109,12 @@ public abstract class Hero {
         equippedArmors.put(armor.getSlot(), armor);
     }
 
+    public HashMap<Slot, Armor> getEquippedArmors() {
+        return equippedArmors;
+    }
+    public HashMap<Slot, Weapon> getEquippedWeapon() {
+        return equippedWeapon;
+    }
 }
 
 

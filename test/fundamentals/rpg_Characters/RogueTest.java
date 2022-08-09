@@ -6,8 +6,7 @@ import fundamentals.items.armor.ArmorType;
 import fundamentals.items.weapons.Weapon;
 import org.junit.jupiter.api.Test;
 
-import static fundamentals.items.weapons.WeaponType.Bow;
-import static fundamentals.items.weapons.WeaponType.Dagger;
+import static fundamentals.items.weapons.WeaponType.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RogueTest {
@@ -68,6 +67,26 @@ class RogueTest {
         float expected = 4.24f;
 
         assertEquals(hero.characterDPS(), expected);
+    }
+
+    @Test
+        //test if armor gets equipped
+    void testEquipArmor() {
+        Hero hero = new Rogue("Sean");
+        Armor armor = new Armor(ArmorType.Leather, "Armor", Slot.Body, 1, new Attributes(1, 1, 1));
+        hero.equipArmor(armor);
+
+        assertEquals(hero.getEquippedArmors().get(Slot.Body), armor);
+    }
+
+    @Test
+        //test if weapon gets equipped
+    void testEquipWeapon() {
+        Weapon weapon = new Weapon("Dagger", 1, Dagger, 2, 2);
+        Hero hero = new Rogue("Dean" );
+        hero.equip(weapon);
+
+        assertEquals(hero.getEquippedWeapon().get(Slot.Weapon), weapon);
     }
 
 }

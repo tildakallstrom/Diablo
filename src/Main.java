@@ -18,10 +18,6 @@ public class Main {
        // hero.levelUp();
 
 
-
-
-
-
         String heroDisplay = String.format("Character name: %s, Level: %s, Strength: %s, Dexterity: %s, Intelligence: %s, DPS: %s",
                 hero.getName(),
                 hero.getLevel(),

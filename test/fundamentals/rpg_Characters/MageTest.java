@@ -69,4 +69,24 @@ class MageTest {
 
         assertEquals(hero.characterDPS(), expected);
     }
+
+    @Test
+    //test if armor gets equipped
+    void testEquipArmor() {
+        Hero hero = new Mage("Sean");
+        Armor armor = new Armor(ArmorType.Cloth, "Armor", Slot.Body, 1, new Attributes(1, 1, 1));
+        hero.equipArmor(armor);
+
+        assertEquals(hero.getEquippedArmors().get(Slot.Body), armor);
+    }
+
+    @Test
+    //test if weapon gets equipped
+    void testEquipWeapon() {
+        Weapon wand = new Weapon("Wand", 1, Wand, 2, 2);
+        Hero hero = new Mage("Dean" );
+        hero.equip(wand);
+
+        assertEquals(hero.getEquippedWeapon().get(Slot.Weapon), wand);
+    }
 }

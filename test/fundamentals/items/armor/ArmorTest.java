@@ -4,6 +4,7 @@ import fundamentals.items.Slot;
 import fundamentals.items.weapons.Weapon;
 import fundamentals.rpg_Characters.Attributes;
 import fundamentals.rpg_Characters.Hero;
+import fundamentals.rpg_Characters.Mage;
 import fundamentals.rpg_Characters.Rogue;
 import fundamentals.rpg_Characters.exceptions.InvalidArmorException;
 import org.junit.jupiter.api.Test;
@@ -58,7 +59,7 @@ class ArmorTest {
      @Test
     void testEquipArmor() {
          Armor ClothArmor = new Armor(ArmorType.Cloth, "ClothArmor", Slot.Body, 1, new Attributes(1, 1, 1));
-         Hero hero = new Rogue("Dean" );
+         Hero hero = new Mage("Dean" );
 
          hero.equipArmor(ClothArmor);
      }
