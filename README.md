@@ -75,7 +75,7 @@ The Warrior begins att level 1 with:
 There are different slots for weapons and armors. The weapons can only be equipped in the weapon slot and the armors can be equipped in head, body and legs.
 
 
-
+### Requirements
 
 The minimum requirements for this assignment is:
 - Various character classes having attributes which increase at different rates as the character gains levels.
