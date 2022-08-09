@@ -13,10 +13,12 @@ The Mage begins att level 1 with:
 - Strength 1
 - Dexterity 1
 - Intelligence 8
+
 Mages deal increased damage for every point of intelligence. With every level Mage gains:
 - Strength 1
 - Dexterity 1
 - Intelligence 5
+
 A Mage can equip the following weapons:
 - Staff
 - Wand
@@ -28,13 +30,16 @@ The Mage begins att level 1 with:
 - Strength 1
 - Dexterity 7
 - Intelligence 1
-  Rangers deal increased damage for every point of dexterity. With every level Ranger gains:
+  
+Rangers deal increased damage for every point of dexterity. With every level Ranger gains:
 - Strength 1
 - Dexterity 5
 - Intelligence 1
-  A Ranger can equip the following weapons:
+  
+A Ranger can equip the following weapons:
 - Bow
-  And The following armors:
+  
+And The following armors:
 - Leather
 - Mail
 
@@ -43,14 +48,17 @@ The Rogue begins att level 1 with:
 - Strength 2
 - Dexterity 6
 - Intelligence 1
-  Rogues deal increased damage for every point of dexterity. With every level Rogue gains:
+  
+Rogues deal increased damage for every point of dexterity. With every level Rogue gains:
 - Strength 1
 - Dexterity 4
 - Intelligence 1
-  A Rogue can equip the following weapons:
+  
+A Rogue can equip the following weapons:
 - Dagger
 - Sword
-  And The following armors:
+  
+And The following armors:
 - Leather
 - Mail
 
@@ -59,15 +67,18 @@ The Warrior begins att level 1 with:
 - Strength 5
 - Dexterity 2
 - Intelligence 1
-  Warrior deal increased damage for every point of strength. With every level Warrior gains:
+  
+Warrior deal increased damage for every point of strength. With every level Warrior gains:
 - Strength 3
 - Dexterity 2
 - Intelligence 1
-  A Warrior can equip the following weapons:
+  
+A Warrior can equip the following weapons:
 - Axe
 - Hammer
 - Sword
-  And The following armors:
+  
+And The following armors:
 - Mail
 - Plate
 
