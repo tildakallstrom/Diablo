@@ -81,6 +81,22 @@ class MageTest {
     }
 
     @Test
+        //test if armor gets equipped
+    void testEquipTwoArmors() {
+        Hero hero = new Mage("Sean");
+        Armor armor = new Armor(ArmorType.Cloth, "Armor", Slot.Body, 1, new Attributes(1, 1, 1));
+        Armor headArmor = new Armor(ArmorType.Cloth, "Armor", Slot.Head, 1, new Attributes(1, 1, 1));
+
+        hero.equipArmor(armor);
+        hero.equipArmor(headArmor);
+
+        assertAll(() -> {
+            assertEquals(hero.getEquippedArmors().get(Slot.Body), armor);
+            assertEquals(hero.getEquippedArmors().get(Slot.Head), headArmor);
+        });
+    }
+
+    @Test
     //test if weapon gets equipped
     void testEquipWeapon() {
         Weapon wand = new Weapon("Wand", 1, Wand, 2, 2);
@@ -88,5 +104,20 @@ class MageTest {
         hero.equip(wand);
 
         assertEquals(hero.getEquippedWeapon().get(Slot.Weapon), wand);
+    }
+
+    @Test
+        //test if weapon num2 gets equipped and the first one thrown away
+    void testEquipTwoWeapons() {
+        Weapon wand = new Weapon("Wand", 1, Wand, 2, 2);
+        Weapon weapon = new Weapon("Wand", 1, Wand, 2, 2);
+        Hero hero = new Mage("Dean" );
+        hero.equip(wand);
+        hero.equip(weapon);
+        
+        assertAll(() -> {
+            assertNotEquals(hero.getEquippedWeapon().get(Slot.Weapon), wand);
+            assertEquals(hero.getEquippedWeapon().get(Slot.Weapon), weapon);
+        });
     }
 }
