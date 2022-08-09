@@ -93,7 +93,7 @@ The minimum requirements for this assignment is:
 - Equipment, such as armor and weapons, that characters can equip. The equipped items will alter the power of
 the character, causing it to deal more damage and be able to survive longer. Certain characters can equip
 certain item types.
-- Custom exceptions. There are two custom exceptions you are required to write, as detailed in Appendix B.
+- Custom exceptions. There are two custom exceptions you are required to write.
 - Full test coverage of the functionality. 
 
 ## Use this project
